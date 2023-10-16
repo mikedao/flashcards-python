@@ -29,3 +29,19 @@ def test_correct():
 
     assert turn.correct() == False
 
+def test_feedback():
+    """ Testing that the feedback method returns the correct string """
+    question = "What is the Capital of Alaska?"
+    answer = "Juneau"
+    category = "Geography"
+
+    card = Card(question, answer, category)
+
+    turn = Turn("Juneau", card)
+
+    assert turn.feedback() == "Correct!"
+
+    turn = Turn("Albuquerque", card)
+
+    assert turn.feedback() == "Incorrect."
+
