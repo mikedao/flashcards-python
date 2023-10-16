@@ -37,3 +37,9 @@ class Round:
     
     def percent_correct_by_category(self, category):
         return self.number_correct_by_category(category) / self.number_of_cards_in_category(category) * 100
+
+    def categories(self):
+        categories = []
+        for turn in self.turns:
+            if turn.card.category not in categories : categories.append(turn.card.category)
+        return categories
